@@ -5,9 +5,10 @@
 
 int main(){
 	std::string name;
-	while true{
-		
+	while (true)
+	{
+		std::cout << "init" << std::endl;
 	}
-	return  1;
+	return 1;
 }
 
