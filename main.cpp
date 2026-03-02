@@ -1,14 +1,29 @@
 #include <iostream>
-#include <cstdio>
+#include <filesystem>
 
 
+std::filesystem::path path = "/dev/input";
+
+
+
+bool change_dr();
 
 int main(){
-	std::string name;
-	while (true)
-	{
-		std::cout << "init" << std::endl;
-	}
-	return 1;
+    if(!(change_dr)){
+      std::cout << "Path not found";
+      return 0;
+    }
+    std::cout << "HI" << std::endl;
+    return 1;
 }
 
+
+
+bool change_dr(){
+    if(std::filesystem::exists(path))
+    {
+    std::filesystem::current_path(path);
+    return true;
+    }
+    return false;
+}
